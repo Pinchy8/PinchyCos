@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinchy</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="Intro">
+        <h1>Pinchy</h1>
+        <nav class="navbar">
+            <ul class="nav-links">
+              <li><a href="#about">About Me</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <img class="Banner" src="./Pictures/Banner.png" alt="Banner">
+
+    <div class="about-me">
+        <h2 id="about">About me</h2>
+            <p>I’m a cosplayer and content creator based in Belgium with a deep love for anime and video games. 
+            Cosplay is my way of stepping into new worlds. I mix accuracy with creativity to make each look feel unique and fun.</p>
+    </div>
+
+    <div class="services-section">
+        <h2 id="services">Services</h2>
+        <div class="services-container">
+          <div class="service">
+            <h3>Branding & Product Styling</h3>
+            <p> <b>Your brand stand out.</b> 
+                As a cosplayer, I specialize in bold visuals, detailed styling, and recognizable aesthetics. 
+                This makes me the perfect fit for creative product photography, stylized content, or themed branding for your campaign.</p>
+            <img class="Services" src="./Pictures/Pic1.png" alt="Branding">
+          </div>
+      
+          <div class="service">
+            <h3>Live Appearances at Conventions & Events</h3>
+            <p> <b>Attention at your booth.</b> 
+                Looking for someone who can turn heads and match your brand’s energy? As a cosplayer, 
+                I can appear at anime or gaming events as a booth model, brand ambassador, or character performer.</p>
+            <img class="Services" src="./Pictures/Pic2.png" alt="Live Appearances">
+          </div>
+      
+          <div class="service">
+            <h3>Themed Photoshoots & Creative Campaigns</h3>
+            <p> <b>Turn your concept into cosplay content.</b>
+                I create custom visual content tailored to your product or theme. Whether it’s a magical aesthetic, 
+                bold villain energy, or soft pastel vibes, I can help bring your ideas to life through cosplay.</p>
+            <img class="Services" src="./Pictures/Pic3.png" alt="Themed Photoshoots">
+          </div>
+        </div>
+            <div class="contact-button-wrapper">
+                <a href="mailto:pinchy.cos@gmail.com" class="contact-button">Contact me</a>
+            </div>
+      </div>
+      
+      <div class="Gallery">
+        <h2 id="portfolio">Portfolio</h2>
+        <div class="gallery">
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Dio1.jpg">
+              <img src="./Pictures/Dio1.jpg" alt="Cosplay 1">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Jolyne1.jpg">
+              <img src="./Pictures/Jolyne1.jpg" alt="Cosplay 2">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Lumine1.jpg">
+              <img src="./Pictures/Lumine1.jpg" alt="Cosplay 3">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Dio2.jpg">
+              <img src="./Pictures/Dio2.jpg" alt="Cosplay 4">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Jolyne2.jpg">
+              <img src="./Pictures/Jolyne2.jpg" alt="Cosplay 5">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Dio3.jpg">
+              <img src="./Pictures/Dio3.jpg" alt="Cosplay 6">
+            </a>
+          </div>
+          <div class="gallery-item">
+            <a href="#" class="open-lightbox" data-image="./Pictures/Jolyne3.jpg">
+              <img src="./Pictures/Jolyne3.jpg" alt="Cosplay 7">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Lightbox Container -->
+      <div id="lightbox" class="lightbox">
+        <span id="close-lightbox" class="close-btn">&times;</span>
+        <img id="lightbox-img" src="" alt="Large Image">
+      </div>
+      <script>
+        const lightboxLinks = document.querySelectorAll('.open-lightbox');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('close-lightbox');
+      
+        // Voeg een click event toe aan elke link om de lightbox te openen
+        lightboxLinks.forEach(link => {
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const imageSrc = e.target.closest('a').getAttribute('data-image');
+            lightboxImg.src = imageSrc; // Zet de bron van de afbeelding
+            lightbox.style.display = 'flex'; 
+          });
+        });
+      
+        // Sluit de lightbox als de gebruiker op de sluitknop klikt
+        closeBtn.addEventListener('click', () => {
+          lightbox.style.display = 'none'; // Verberg de lightbox
+        });
+      
+        // Sluit de lightbox als de gebruiker buiten de afbeelding klikt
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+          }
+        });
+      </script>
+
+
+<div class="social-media">
+    <h2 id="contact">Follow me on</h2>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/pinchy_y/" target="_blank">
+        <i class="fab fa-instagram social-icon"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pinchy_y" target="_blank">
+        <i class="fab fa-tiktok social-icon"></i>
+      </a>
+      <a href="https://www.youtube.com/@Pinchy_y" target="_blank">
+        <i class="fab fa-youtube social-icon"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/pinchy-cosplay-13970935b/" target="_blank">
+        <i class="fab fa-linkedin social-icon"></i>
+      </a>
+    </div>
+  </div>
+  
+
+  <div class="email-contact">
+    <h3>Get in Touch</h3>
+    <p>Interested in working together or have a question? Feel free to send me an email!</p>
+    <a href="mailto:pinchy.cos@gmail.com" class="email-link">pinchy.cos@gmail.com</a>
+  </div>
+  
+  
+</body>
+</html>
